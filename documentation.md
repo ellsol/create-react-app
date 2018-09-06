@@ -59,8 +59,8 @@ and clean up dependencies
 ## Dependencies
 
 
-    npm install --save prop-types  
-    npm install --save react-router-dom
-    npm install -save redux
-    npm install -save redux-logger
-    npm install -save socket.io-client
+    npm i --save prop-types react-router-dom redux redux-logger socket.io-client
+
+## Routing
+
+In index.js

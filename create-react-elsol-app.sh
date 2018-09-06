@@ -1,5 +1,7 @@
 set -e
 
+rm -rf db
+
 if [ -z "$1" ]
   then
     echo "No argument supplied"
@@ -9,18 +11,16 @@ fi
 npx create-react-app $1
 
 cd $1
+npm install
 rm README.md
 echo $1 > README.md
+
+rm src/*
+
+cp -r ../src/* src
+
+npm i --save prop-types react-router-dom redux redux-logger socket.io-client
+
 git init
 git add -A
 git commit -a -m "initial commit"
-
-
-rm src/App.test.js
-rm src/App.css
-rm src/logo.svg
-rm src/registerServiceWorker.js
-
-mkdir -p src/ui/App
-mkdir -p src/data/Api
-mv src/App.js src/ui/App
